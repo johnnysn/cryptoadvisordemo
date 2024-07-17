@@ -1,4 +1,4 @@
-package com.uriel.cryptoadvisordemo.controller;
+package com.uriel.cryptoadvisordemo.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
