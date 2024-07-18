@@ -7,14 +7,27 @@ public class QuotationFunctionMock implements Function<QuotationFunctionMock.Req
 
     public record Request(String cryptoSymbol) {}
 
+    private static final Quotation mockQuotationBTC = new Quotation(
+            "BTC",
+            "Bitcoin",
+            25000,
+            26000,
+            1317774231.5192668
+    );
+
+    private static final Quotation mockQuotationETH = new Quotation(
+            "ETH",
+            "Ethereum",
+            3457.657160793183,
+            3456.328189028245,
+            2989787847.2354703
+    );
+
     @Override
     public Quotation apply(Request r) {
-        return new Quotation(
-                r.cryptoSymbol(),
-                "",
-                25000,
-                26000,
-                1317774231.5192668
-        );
+        if (r.cryptoSymbol.equals("ETH")) {
+            return mockQuotationETH;
+        }
+        return mockQuotationBTC;
     }
 }
