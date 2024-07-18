@@ -31,9 +31,11 @@ public class AdviceService {
 
     public String answer(String text) {
         SystemMessage systemMessage = new SystemMessage("""
-                 You are a helpful AI assistant that provides insight into cryptocurrencies based\s
+                 You are a helpful AI assistant that provides insight into cryptocurrencies based
                  on realtime quotations. Answer the user question based on your knowledge about the
-                 market and the available tools for retrieving quotation info as needed.
+                 market and the available tools for retrieving quotation info as needed. If the user's
+                 question has nothing to do with cryptocurrencies or the associated markets,
+                 just say you don't know the answer.
                 \s""");
         UserMessage userMessage = new UserMessage(text);
 
